@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features | Advanced 3D Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="threejs-bg"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-cube logo-icon"></i>
+                <span class="logo-text">3D<span class="logo-accent">Expense</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="features.html" class="nav-link active">Features</a></li>
+                <li><a href="demo.html" class="nav-link">Live Demo</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="nav-link nav-github"><i class="fab fa-github"></i> GitHub</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="page-tag"><i class="fas fa-star"></i> Features</span>
+            <h1 class="page-title">Everything You <span class="accent">Need</span></h1>
+            <p class="page-subtitle">Explore the powerful features that make our 3D Expense Tracker stand out</p>
+        </div>
+    </section>
+
+    <section class="features-detail" id="charts">
+        <div class="feature-detail-row">
+            <div class="feature-detail-visual">
+                <div class="visual-card">
+                    <div class="visual-3d-chart">
+                        <div class="bar bar-1" style="--h: 60%; --d: 0.2s;"></div>
+                        <div class="bar bar-2" style="--h: 85%; --d: 0.4s;"></div>
+                        <div class="bar bar-3" style="--h: 45%; --d: 0.6s;"></div>
+                        <div class="bar bar-4" style="--h: 90%; --d: 0.8s;"></div>
+                        <div class="bar bar-5" style="--h: 70%; --d: 1.0s;"></div>
+                        <div class="bar bar-6" style="--h: 55%; --d: 1.2s;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-detail-content">
+                <div class="feature-tag"><i class="fas fa-chart-bar"></i> 3D Analytics</div>
+                <h2>Interactive 3D Charts</h2>
+                <p>Transform your financial data into immersive 3D visualizations with Plotly-powered charts. Experience spending breakdowns, monthly trends, and budget comparisons in stunning 3D.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> 3D bar charts with gradient colors</li>
+                    <li><i class="fas fa-check-circle"></i> 3D scatter plots with orbit camera</li>
+                    <li><i class="fas fa-check-circle"></i> Interactive hover tooltips</li>
+                    <li><i class="fas fa-check-circle"></i> Time-based spending visualization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-detail alt-bg" id="ai">
+        <div class="feature-detail-row reverse">
+            <div class="feature-detail-visual">
+                <div class="visual-card">
+                    <div class="visual-ai">
+                        <div class="ai-brain">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="ai-particles">
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-detail-content">
+                <div class="feature-tag"><i class="fas fa-brain"></i> AI Powered</div>
+                <h2>Smart AI Insights</h2>
+                <p>Our AI engine analyzes your financial patterns and provides intelligent suggestions to help you save more and spend smarter.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Month-over-month spending comparisons</li>
+                    <li><i class="fas fa-check-circle"></i> Budget overspending warnings</li>
+                    <li><i class="fas fa-check-circle"></i> Top spending category alerts</li>
+                    <li><i class="fas fa-check-circle"></i> Income-to-expense ratio analysis</li>
+                    <li><i class="fas fa-check-circle"></i> Savings goal progress notifications</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-detail" id="security">
+        <div class="feature-detail-row">
+            <div class="feature-detail-visual">
+                <div class="visual-card">
+                    <div class="visual-security">
+                        <div class="shield-ring ring-1"></div>
+                        <div class="shield-ring ring-2"></div>
+                        <div class="shield-ring ring-3"></div>
+                        <div class="shield-icon">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <div class="lock-particles">
+                            <i class="fas fa-lock"></i>
+                            <i class="fas fa-key"></i>
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-detail-content">
+                <div class="feature-tag"><i class="fas fa-shield-halved"></i> Security</div>
+                <h2>Multi-User Secure Auth</h2>
+                <p>Your financial data is protected with enterprise-grade security. Each user has fully isolated records with SHA-256 password hashing.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> SHA-256 password hashing</li>
+                    <li><i class="fas fa-check-circle"></i> Fully isolated user data</li>
+                    <li><i class="fas fa-check-circle"></i> Local SQLite database</li>
+                    <li><i class="fas fa-check-circle"></i> No data leaves your machine</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-detail alt-bg" id="recurring">
+        <div class="feature-detail-row reverse">
+            <div class="feature-detail-visual">
+                <div class="visual-card">
+                    <div class="visual-recurring">
+                        <div class="recurring-ring">
+                            <div class="recurring-item item-1"><i class="fas fa-wifi"></i></div>
+                            <div class="recurring-item item-2"><i class="fas fa-home"></i></div>
+                            <div class="recurring-item item-3"><i class="fas fa-bolt"></i></div>
+                            <div class="recurring-item item-4"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="recurring-center"><i class="fas fa-sync-alt"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-detail-content">
+                <div class="feature-tag"><i class="fas fa-sync-alt"></i> Automation</div>
+                <h2>Recurring Expenses</h2>
+                <p>Never miss a bill again. Manage subscriptions, rent, utilities, and other recurring payments with automatic simulation tracking.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Automatic recurring expense tracking</li>
+                    <li><i class="fas fa-check-circle"></i> Subscription management</li>
+                    <li><i class="fas fa-check-circle"></i> Bill reminder notifications</li>
+                    <li><i class="fas fa-check-circle"></i> Auto-simulation for projections</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-detail" id="goals">
+        <div class="feature-detail-row">
+            <div class="feature-detail-visual">
+                <div class="visual-card">
+                    <div class="visual-goals">
+                        <div class="goal-circle">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="goal-bg" cx="50" cy="50" r="45"/>
+                                <circle class="goal-progress" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="70"/>
+                            </svg>
+                            <div class="goal-text">
+                                <span class="goal-percent">75%</span>
+                                <span class="goal-label">Goal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-detail-content">
+                <div class="feature-tag"><i class="fas fa-bullseye"></i> Goals</div>
+                <h2>Savings Goals</h2>
+                <p>Set financial targets and watch your progress with beautiful circular progress indicators and 3D styling.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Create custom savings goals</li>
+                    <li><i class="fas fa-check-circle"></i> Circular progress indicators</li>
+                    <li><i class="fas fa-check-circle"></i> 3D styled goal cards</li>
+                    <li><i class="fas fa-check-circle"></i> Progress notifications</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-detail alt-bg" id="export">
+        <div class="feature-detail-row reverse">
+            <div class="feature-detail-visual">
+                <div class="visual-card">
+                    <div class="visual-export">
+                        <div class="export-file file-1">
+                            <i class="fas fa-file-csv"></i>
+                            <span>report.csv</span>
+                        </div>
+                        <div class="export-file file-2">
+                            <i class="fas fa-file-alt"></i>
+                            <span>report.txt</span>
+                        </div>
+                        <div class="export-arrow">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-detail-content">
+                <div class="feature-tag"><i class="fas fa-file-export"></i> Export</div>
+                <h2>Export Reports</h2>
+                <p>Download your financial data in multiple formats. Generate comprehensive CSV and TXT reports with one click.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> CSV report generation</li>
+                    <li><i class="fas fa-check-circle"></i> TXT formatted reports</li>
+                    <li><i class="fas fa-check-circle"></i> One-click download</li>
+                    <li><i class="fas fa-check-circle"></i> Filtered data exports</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-detail" id="budget">
+        <div class="feature-detail-row">
+            <div class="feature-detail-visual">
+                <div class="visual-card">
+                    <div class="visual-budget">
+                        <div class="gauge-container">
+                            <div class="gauge gauge-1">
+                                <div class="gauge-fill" style="--fill: 65%;"></div>
+                                <span>Food</span>
+                            </div>
+                            <div class="gauge gauge-2">
+                                <div class="gauge-fill" style="--fill: 40%;"></div>
+                                <span>Transport</span>
+                            </div>
+                            <div class="gauge gauge-3">
+                                <div class="gauge-fill" style="--fill: 85%;"></div>
+                                <span>Shopping</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-detail-content">
+                <div class="feature-tag"><i class="fas fa-wallet"></i> Budgeting</div>
+                <h2>3D Budget Gauges</h2>
+                <p>Set monthly budgets per category and monitor your spending with interactive 3D gauge visualizations.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Category-based budgets</li>
+                    <li><i class="fas fa-check-circle"></i> 3D gauge indicators</li>
+                    <li><i class="fas fa-check-circle"></i> Color-coded zones (green/yellow/red)</li>
+                    <li><i class="fas fa-check-circle"></i> Real-time spending comparison</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="all-features-grid">
+        <div class="section-header">
+            <span class="section-tag">Complete List</span>
+            <h2 class="section-title">All <span class="accent">Features</span></h2>
+        </div>
+        <div class="features-table">
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-users"></i></div>
+                <div class="feature-row-content">
+                    <h4>Multi-User System</h4>
+                    <p>Secure registration & login with SHA-256 password hashing</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <div class="feature-row-content">
+                    <h4>Expense Tracking</h4>
+                    <p>Add, view, edit, delete, search, and categorize expenses</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                <div class="feature-row-content">
+                    <h4>Income Tracking</h4>
+                    <p>Log multiple income sources with full history</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-chart-pie"></i></div>
+                <div class="feature-row-content">
+                    <h4>3D Budget Gauges</h4>
+                    <p>Interactive gauge charts showing budget vs actual spending</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-bullseye"></i></div>
+                <div class="feature-row-content">
+                    <h4>Savings Goals</h4>
+                    <p>Circular progress indicators with 3D styling</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-sync-alt"></i></div>
+                <div class="feature-row-content">
+                    <h4>Recurring Expenses</h4>
+                    <p>Manage subscriptions, rent, bills with auto-simulation</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-chart-line"></i></div>
+                <div class="feature-row-content">
+                    <h4>3D Analytics</h4>
+                    <p>3D bar charts, 3D line charts, pie charts, trend analysis</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-robot"></i></div>
+                <div class="feature-row-content">
+                    <h4>AI Insights</h4>
+                    <p>Smart suggestions, budget alerts, spending comparisons</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-file-download"></i></div>
+                <div class="feature-row-content">
+                    <h4>Export System</h4>
+                    <p>CSV and TXT report generation with download buttons</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-search"></i></div>
+                <div class="feature-row-content">
+                    <h4>Search & Filter</h4>
+                    <p>Advanced filtering by category, date range, keywords</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-palette"></i></div>
+                <div class="feature-row-content">
+                    <h4>Cyberpunk UI</h4>
+                    <p>Neon colors, 3D card hover effects, scanlines, floating animations</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-row-icon"><i class="fas fa-globe"></i></div>
+                <div class="feature-row-content">
+                    <h4>Three.js Background</h4>
+                    <p>Animated particles, floating wireframe cubes, grid floor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <i class="fas fa-cube"></i>
+                    <span>3D<span class="accent">Expense</span></span>
+                </a>
+                <p>A futuristic financial management system built with passion by <a href="https://github.com/issu321" target="_blank" class="footer-link">Ussu</a>.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank"><i class="fab fa-git-alt"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Live Demo</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/README.md" target="_blank">README</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/LICENSE" target="_blank">License</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank">Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 <a href="https://github.com/issu321" target="_blank">Ussu</a>. Licensed under MIT. Built with <i class="fas fa-heart"></i> and Three.js</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

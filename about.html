@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Advanced 3D Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="threejs-bg"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-cube logo-icon"></i>
+                <span class="logo-text">3D<span class="logo-accent">Expense</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="features.html" class="nav-link">Features</a></li>
+                <li><a href="demo.html" class="nav-link">Live Demo</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="nav-link nav-github"><i class="fab fa-github"></i> GitHub</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="page-tag"><i class="fas fa-user"></i> About</span>
+            <h1 class="page-title">About the <span class="accent">Project</span></h1>
+            <p class="page-subtitle">Learn about the developer, the vision, and the technology behind the 3D Expense Tracker</p>
+        </div>
+    </section>
+
+    <!-- Developer Profile -->
+    <section class="about-developer">
+        <div class="dev-card" data-tilt>
+            <div class="dev-avatar">
+                <div class="dev-avatar-inner">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <div class="dev-status online"></div>
+            </div>
+            <div class="dev-info">
+                <h2>Ussu</h2>
+                <span class="dev-handle">@issu321</span>
+                <p class="dev-bio">Passionate developer creating futuristic web applications with 3D animations, AI integrations, and cyberpunk aesthetics. Building tools that make financial management immersive and intuitive.</p>
+                <div class="dev-stats-row">
+                    <div class="dev-stat">
+                        <span class="dev-stat-num">15+</span>
+                        <span class="dev-stat-label">Projects</span>
+                    </div>
+                    <div class="dev-stat">
+                        <span class="dev-stat-num">500+</span>
+                        <span class="dev-stat-label">Commits</span>
+                    </div>
+                    <div class="dev-stat">
+                        <span class="dev-stat-num">3+</span>
+                        <span class="dev-stat-label">Years</span>
+                    </div>
+                </div>
+                <div class="dev-links">
+                    <a href="https://github.com/issu321" target="_blank" class="dev-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="dev-link">
+                        <i class="fas fa-code-branch"></i> Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Story -->
+    <section class="about-story alt-bg">
+        <div class="section-header">
+            <span class="section-tag">Our Story</span>
+            <h2 class="section-title">The <span class="accent">Vision</span></h2>
+        </div>
+        <div class="story-content">
+            <div class="story-text">
+                <p>The <strong>Advanced 3D Expense Tracker</strong> was born from a simple idea: <em>financial management should be as engaging as it is essential.</em></p>
+                <p>Traditional expense trackers are boring spreadsheets and dull forms. We wanted to create something different — a tool that makes you <em>want</em> to track your finances.</p>
+                <p>By combining the power of <strong>Streamlit</strong> for rapid web development, <strong>Plotly</strong> for stunning 3D charts, and <strong>Three.js</strong> for immersive particle animations, we built a financial command center that feels like it's from the future.</p>
+                <p>Every feature was designed with the user in mind: from the cyberpunk-inspired UI to the AI-powered insights engine that learns your spending patterns and offers smart suggestions.</p>
+            </div>
+            <div class="story-quote">
+                <i class="fas fa-quote-left"></i>
+                <blockquote>"Your money, your dashboard, your rules."</blockquote>
+                <cite>— Ussu, Creator</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="about-roadmap">
+        <div class="section-header">
+            <span class="section-tag">Future</span>
+            <h2 class="section-title">Development <span class="accent">Roadmap</span></h2>
+        </div>
+        <div class="roadmap-timeline">
+            <div class="roadmap-item completed">
+                <div class="roadmap-marker">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="roadmap-content">
+                    <span class="roadmap-status">Completed</span>
+                    <h4>Core Features</h4>
+                    <p>Multi-user auth, expense/income tracking, 3D charts, AI insights</p>
+                </div>
+            </div>
+            <div class="roadmap-item completed">
+                <div class="roadmap-marker">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="roadmap-content">
+                    <span class="roadmap-status">Completed</span>
+                    <h4>3D Animations</h4>
+                    <p>Three.js particle backgrounds, floating wireframe cubes, neon UI</p>
+                </div>
+            </div>
+            <div class="roadmap-item in-progress">
+                <div class="roadmap-marker">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+                <div class="roadmap-content">
+                    <span class="roadmap-status">In Progress</span>
+                    <h4>Theme System</h4>
+                    <p>Dark/Light theme toggle, custom color themes</p>
+                </div>
+            </div>
+            <div class="roadmap-item upcoming">
+                <div class="roadmap-marker">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="roadmap-content">
+                    <span class="roadmap-status">Upcoming</span>
+                    <h4>Multi-Currency</h4>
+                    <p>Support for multiple currencies with real-time conversion</p>
+                </div>
+            </div>
+            <div class="roadmap-item upcoming">
+                <div class="roadmap-marker">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="roadmap-content">
+                    <span class="roadmap-status">Upcoming</span>
+                    <h4>Data Backup</h4>
+                    <p>Cloud backup & restore, data export/import</p>
+                </div>
+            </div>
+            <div class="roadmap-item upcoming">
+                <div class="roadmap-marker">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="roadmap-content">
+                    <span class="roadmap-status">Upcoming</span>
+                    <h4>Investment Tracker</h4>
+                    <p>Portfolio tracking, stock monitoring, dividend tracking</p>
+                </div>
+            </div>
+            <div class="roadmap-item upcoming">
+                <div class="roadmap-marker">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="roadmap-content">
+                    <span class="roadmap-status">Upcoming</span>
+                    <h4>Docker & Cloud</h4>
+                    <p>Docker containerization, Streamlit Cloud deployment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- License Section -->
+    <section class="about-license alt-bg">
+        <div class="section-header">
+            <span class="section-tag">Legal</span>
+            <h2 class="section-title">Open Source <span class="accent">License</span></h2>
+        </div>
+        <div class="license-card">
+            <div class="license-header">
+                <i class="fas fa-balance-scale"></i>
+                <h3>MIT License</h3>
+            </div>
+            <div class="license-body">
+                <p>Copyright (c) 2026 <a href="https://github.com/issu321" target="_blank">Ussu</a></p>
+                <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+                <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+                <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.</p>
+            </div>
+            <div class="license-footer">
+                <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/LICENSE" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-external-link-alt"></i> View Full License
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Join the Community</h2>
+            <p>Star the repository, report issues, or contribute to make this project even better.</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="btn btn-primary btn-glow btn-large">
+                    <i class="fab fa-github"></i> Star on GitHub
+                </a>
+                <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/issues" target="_blank" class="btn btn-outline btn-glow btn-large">
+                    <i class="fas fa-bug"></i> Report Issue
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <i class="fas fa-cube"></i>
+                    <span>3D<span class="accent">Expense</span></span>
+                </a>
+                <p>A futuristic financial management system built with passion by <a href="https://github.com/issu321" target="_blank" class="footer-link">Ussu</a>.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank"><i class="fab fa-git-alt"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Live Demo</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/README.md" target="_blank">README</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/LICENSE" target="_blank">License</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank">Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 <a href="https://github.com/issu321" target="_blank">Ussu</a>. Licensed under MIT. Built with <i class="fas fa-heart"></i> and Three.js</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

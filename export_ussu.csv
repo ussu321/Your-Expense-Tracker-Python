@@ -1,0 +1,8 @@
+=== EXPENSES ===
+date,category,amount,description
+2026-05-23,food,50000.0,none
+2026-05-23,food,10000.0,Recurring: Netflix
+
+=== INCOME ===
+date,source,amount,description
+2026-05-23,salary,50000.0,

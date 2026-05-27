@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced 3D Expense Tracker | Ussu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Three.js 3D Background Canvas -->
+    <canvas id="threejs-bg"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-cube logo-icon"></i>
+                <span class="logo-text">3D<span class="logo-accent">Expense</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="features.html" class="nav-link">Features</a></li>
+                <li><a href="demo.html" class="nav-link">Live Demo</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="nav-link nav-github"><i class="fab fa-github"></i> GitHub</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-rocket"></i>
+                <span>Next-Gen Financial Management</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="glitch" data-text="Advanced">Advanced</span>
+                <span class="hero-title-accent">3D Expense</span>
+                <span class="glitch" data-text="Tracker">Tracker</span>
+            </h1>
+            <p class="hero-subtitle">
+                A futuristic, multi-user 3D web-based financial management system with 
+                AI insights, Three.js animations, and cyberpunk aesthetics.
+            </p>
+            <div class="hero-cta">
+                <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="btn btn-primary btn-glow">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="demo.html" class="btn btn-secondary btn-glow">
+                    <i class="fas fa-play"></i> Live Demo
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card" data-tilt>
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number" data-target="5000">0</span>
+                    <span class="stat-label">Active Users</span>
+                </div>
+                <div class="stat-card" data-tilt>
+                    <i class="fas fa-star"></i>
+                    <span class="stat-number" data-target="150">0</span>
+                    <span class="stat-label">GitHub Stars</span>
+                </div>
+                <div class="stat-card" data-tilt>
+                    <i class="fas fa-code-branch"></i>
+                    <span class="stat-number" data-target="25">0</span>
+                    <span class="stat-label">Contributors</span>
+                </div>
+                <div class="stat-card" data-tilt>
+                    <i class="fas fa-download"></i>
+                    <span class="stat-number" data-target="1200">0</span>
+                    <span class="stat-label">Downloads</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Features Preview Section -->
+    <section class="features-preview" id="features-preview">
+        <div class="section-header">
+            <span class="section-tag">Core Features</span>
+            <h2 class="section-title">Powerful <span class="accent">3D Analytics</span></h2>
+            <p class="section-subtitle">Transform your financial data into immersive 3D visualizations</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card" data-tilt>
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3>3D Charts</h3>
+                <p>Interactive 3D bar charts, scatter plots, and gauge visualizations powered by Plotly.</p>
+                <a href="features.html#charts" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-card" data-tilt>
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI Insights</h3>
+                <p>Smart financial suggestions, budget alerts, and spending pattern analysis.</p>
+                <a href="features.html#ai" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-card" data-tilt>
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h3>Secure Auth</h3>
+                <p>Multi-user system with SHA-256 password hashing and isolated data storage.</p>
+                <a href="features.html#security" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-card" data-tilt>
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Recurring Expenses</h3>
+                <p>Manage subscriptions, rent, and bills with automatic simulation tracking.</p>
+                <a href="features.html#recurring" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-card" data-tilt>
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Savings Goals</h3>
+                <p>Set financial targets with circular progress indicators and 3D styling.</p>
+                <a href="features.html#goals" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="feature-card" data-tilt>
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-file-export"></i>
+                </div>
+                <h3>Export Reports</h3>
+                <p>Download CSV and TXT reports with one-click download functionality.</p>
+                <a href="features.html#export" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack" id="tech-stack">
+        <div class="section-header">
+            <span class="section-tag">Built With</span>
+            <h2 class="section-title">Technology <span class="accent">Stack</span></h2>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-item" data-tilt>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <span>Python 3.11+</span>
+            </div>
+            <div class="tech-item" data-tilt>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit">
+                <span>Streamlit</span>
+            </div>
+            <div class="tech-item" data-tilt>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg" alt="Plotly">
+                <span>Plotly</span>
+            </div>
+            <div class="tech-item" data-tilt>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="Three.js">
+                <span>Three.js</span>
+            </div>
+            <div class="tech-item" data-tilt>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite">
+                <span>SQLite3</span>
+            </div>
+            <div class="tech-item" data-tilt>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                <span>Pandas</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Finances?</h2>
+            <p>Join thousands of users who have taken control of their financial future with our 3D Expense Tracker.</p>
+            <div class="cta-buttons">
+                <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="btn btn-primary btn-glow btn-large">
+                    <i class="fab fa-github"></i> Get Started Now
+                </a>
+                <a href="docs.html" class="btn btn-outline btn-glow btn-large">
+                    <i class="fas fa-book"></i> Read Documentation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <i class="fas fa-cube"></i>
+                    <span>3D<span class="accent">Expense</span></span>
+                </a>
+                <p>A futuristic financial management system built with passion by <a href="https://github.com/issu321" target="_blank" class="footer-link">Ussu</a>.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank"><i class="fab fa-git-alt"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Live Demo</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/README.md" target="_blank">README</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/LICENSE" target="_blank">License</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank">Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 <a href="https://github.com/issu321" target="_blank">Ussu</a>. Licensed under MIT. Built with <i class="fas fa-heart"></i> and Three.js</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

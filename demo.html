@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo | Advanced 3D Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="threejs-bg"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-cube logo-icon"></i>
+                <span class="logo-text">3D<span class="logo-accent">Expense</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="features.html" class="nav-link">Features</a></li>
+                <li><a href="demo.html" class="nav-link active">Live Demo</a></li>
+                <li><a href="docs.html" class="nav-link">Docs</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="nav-link nav-github"><i class="fab fa-github"></i> GitHub</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="page-tag"><i class="fas fa-play-circle"></i> Interactive Demo</span>
+            <h1 class="page-title">Live <span class="accent">Demo</span></h1>
+            <p class="page-subtitle">Experience the 3D Expense Tracker interface with interactive simulations</p>
+        </div>
+    </section>
+
+    <!-- Dashboard Simulation -->
+    <section class="demo-section">
+        <div class="section-header">
+            <span class="section-tag">Dashboard Preview</span>
+            <h2 class="section-title">3D <span class="accent">Dashboard</span></h2>
+        </div>
+        <div class="demo-dashboard">
+            <div class="demo-sidebar">
+                <div class="demo-sidebar-header">
+                    <i class="fas fa-cube"></i>
+                    <span>3D Expense</span>
+                </div>
+                <div class="demo-sidebar-menu">
+                    <div class="demo-menu-item active"><i class="fas fa-home"></i> Dashboard</div>
+                    <div class="demo-menu-item"><i class="fas fa-money-bill-wave"></i> Expenses</div>
+                    <div class="demo-menu-item"><i class="fas fa-hand-holding-dollar"></i> Income</div>
+                    <div class="demo-menu-item"><i class="fas fa-chart-pie"></i> Budgets</div>
+                    <div class="demo-menu-item"><i class="fas fa-bullseye"></i> Savings</div>
+                    <div class="demo-menu-item"><i class="fas fa-sync-alt"></i> Recurring</div>
+                    <div class="demo-menu-item"><i class="fas fa-chart-line"></i> Analytics</div>
+                    <div class="demo-menu-item"><i class="fas fa-robot"></i> AI Insights</div>
+                    <div class="demo-menu-item"><i class="fas fa-file-export"></i> Export</div>
+                </div>
+            </div>
+            <div class="demo-main">
+                <div class="demo-header">
+                    <h3>Welcome back, User!</h3>
+                    <div class="demo-header-actions">
+                        <button class="demo-btn" onclick="addExpense()">
+                            <i class="fas fa-plus"></i> Add Expense
+                        </button>
+                        <button class="demo-btn" onclick="addIncome()">
+                            <i class="fas fa-plus"></i> Add Income
+                        </button>
+                    </div>
+                </div>
+                <div class="demo-metrics">
+                    <div class="demo-metric" data-tilt>
+                        <div class="metric-icon income"><i class="fas fa-arrow-up"></i></div>
+                        <div class="metric-info">
+                            <span class="metric-value" id="total-income">$5,200.00</span>
+                            <span class="metric-label">Total Income</span>
+                        </div>
+                    </div>
+                    <div class="demo-metric" data-tilt>
+                        <div class="metric-icon expense"><i class="fas fa-arrow-down"></i></div>
+                        <div class="metric-info">
+                            <span class="metric-value" id="total-expense">$2,100.00</span>
+                            <span class="metric-label">Total Expenses</span>
+                        </div>
+                    </div>
+                    <div class="demo-metric" data-tilt>
+                        <div class="metric-icon balance"><i class="fas fa-wallet"></i></div>
+                        <div class="metric-info">
+                            <span class="metric-value" id="net-balance">$3,100.00</span>
+                            <span class="metric-label">Net Balance</span>
+                        </div>
+                    </div>
+                    <div class="demo-metric" data-tilt>
+                        <div class="metric-icon savings"><i class="fas fa-piggy-bank"></i></div>
+                        <div class="metric-info">
+                            <span class="metric-value" id="total-savings">$800.00</span>
+                            <span class="metric-label">Savings</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-charts-row">
+                    <div class="demo-chart-card" data-tilt>
+                        <h4><i class="fas fa-chart-bar"></i> Spending by Category</h4>
+                        <div class="demo-3d-bars" id="demo-bars">
+                            <div class="demo-bar" style="--h: 60%; --cat: Food;"><span>Food</span></div>
+                            <div class="demo-bar" style="--h: 85%; --cat: Shopping;"><span>Shopping</span></div>
+                            <div class="demo-bar" style="--h: 45%; --cat: Transport;"><span>Transport</span></div>
+                            <div class="demo-bar" style="--h: 30%; --cat: Bills;"><span>Bills</span></div>
+                            <div class="demo-bar" style="--h: 70%; --cat: Entertainment;"><span>Entertainment</span></div>
+                        </div>
+                    </div>
+                    <div class="demo-chart-card" data-tilt>
+                        <h4><i class="fas fa-chart-pie"></i> Budget Overview</h4>
+                        <div class="demo-budget-gauges">
+                            <div class="demo-gauge">
+                                <div class="gauge-ring" style="--percent: 65;">
+                                    <span>65%</span>
+                                </div>
+                                <span class="gauge-label">Food</span>
+                            </div>
+                            <div class="demo-gauge">
+                                <div class="gauge-ring" style="--percent: 40;">
+                                    <span>40%</span>
+                                </div>
+                                <span class="gauge-label">Transport</span>
+                            </div>
+                            <div class="demo-gauge">
+                                <div class="gauge-ring" style="--percent: 85;">
+                                    <span>85%</span>
+                                </div>
+                                <span class="gauge-label">Shopping</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-transactions">
+                    <h4><i class="fas fa-list"></i> Recent Transactions</h4>
+                    <div class="demo-transaction-list" id="transaction-list">
+                        <div class="demo-transaction">
+                            <div class="tx-icon"><i class="fas fa-shopping-bag"></i></div>
+                            <div class="tx-details">
+                                <span class="tx-name">Grocery Shopping</span>
+                                <span class="tx-date">Today, 2:30 PM</span>
+                            </div>
+                            <span class="tx-amount expense">-$85.50</span>
+                        </div>
+                        <div class="demo-transaction">
+                            <div class="tx-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="tx-details">
+                                <span class="tx-name">Freelance Payment</span>
+                                <span class="tx-date">Yesterday, 10:00 AM</span>
+                            </div>
+                            <span class="tx-amount income">+$1,200.00</span>
+                        </div>
+                        <div class="demo-transaction">
+                            <div class="tx-icon"><i class="fas fa-utensils"></i></div>
+                            <div class="tx-details">
+                                <span class="tx-name">Restaurant Dinner</span>
+                                <span class="tx-date">Yesterday, 8:00 PM</span>
+                            </div>
+                            <span class="tx-amount expense">-$45.00</span>
+                        </div>
+                        <div class="demo-transaction">
+                            <div class="tx-icon"><i class="fas fa-gas-pump"></i></div>
+                            <div class="tx-details">
+                                <span class="tx-name">Gas Station</span>
+                                <span class="tx-date">May 20, 2026</span>
+                            </div>
+                            <span class="tx-amount expense">-$60.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Chart Demo -->
+    <section class="demo-section alt-bg">
+        <div class="section-header">
+            <span class="section-tag">3D Visualization</span>
+            <h2 class="section-title">Interactive <span class="accent">3D Charts</span></h2>
+        </div>
+        <div class="demo-3d-section">
+            <div class="demo-3d-canvas-container">
+                <canvas id="demo-3d-chart"></canvas>
+                <div class="demo-3d-controls">
+                    <button class="demo-control-btn" onclick="rotateChart('left')">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="demo-control-btn" onclick="toggleAutoRotate()">
+                        <i class="fas fa-sync-alt" id="rotate-icon"></i>
+                    </button>
+                    <button class="demo-control-btn" onclick="rotateChart('right')">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="demo-3d-info">
+                <h3>3D Monthly Trend</h3>
+                <p>Experience the immersive 3D scatter plot with connected lines. The camera orbits around the data for a full 360 view of your spending patterns.</p>
+                <div class="demo-legend">
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background: #00d4ff;"></span>
+                        <span>Income</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background: #ff4b4b;"></span>
+                        <span>Expenses</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-dot" style="background: #00ff88;"></span>
+                        <span>Savings</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Insights Demo -->
+    <section class="demo-section">
+        <div class="section-header">
+            <span class="section-tag">AI Engine</span>
+            <h2 class="section-title">Smart <span class="accent">AI Insights</span></h2>
+        </div>
+        <div class="demo-ai-section">
+            <div class="demo-ai-cards">
+                <div class="demo-ai-card alert" data-tilt>
+                    <div class="ai-card-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h4>Budget Alert</h4>
+                    <p>You have spent 85% of your Shopping budget. Consider reducing non-essential purchases this month.</p>
+                    <span class="ai-card-tag">Warning</span>
+                </div>
+                <div class="demo-ai-card info" data-tilt>
+                    <div class="ai-card-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h4>Spending Insight</h4>
+                    <p>Your food expenses increased by 15% compared to last month. Meal prepping could save you ~$120/month.</p>
+                    <span class="ai-card-tag">Suggestion</span>
+                </div>
+                <div class="demo-ai-card success" data-tilt>
+                    <div class="ai-card-icon"><i class="fas fa-trophy"></i></div>
+                    <h4>Goal Progress</h4>
+                    <p>Great job! You are 75% towards your Emergency Fund goal. At this rate, you will reach it in 2 months.</p>
+                    <span class="ai-card-tag">Achievement</span>
+                </div>
+                <div class="demo-ai-card warning" data-tilt>
+                    <div class="ai-card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Trend Analysis</h4>
+                    <p>Your entertainment spending has been trending upward for 3 months. Consider setting a stricter limit.</p>
+                    <span class="ai-card-tag">Trend</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Savings Goals Demo -->
+    <section class="demo-section alt-bg">
+        <div class="section-header">
+            <span class="section-tag">Goals</span>
+            <h2 class="section-title">Savings <span class="accent">Goals</span></h2>
+        </div>
+        <div class="demo-goals-section">
+            <div class="demo-goal-card" data-tilt>
+                <div class="goal-visual">
+                    <div class="goal-circle-demo">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="goal-bg" cx="50" cy="50" r="45"/>
+                            <circle class="goal-progress" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="70"/>
+                        </svg>
+                        <div class="goal-text">
+                            <span class="goal-percent">75%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="goal-info">
+                    <h4>Emergency Fund</h4>
+                    <p>Target: $10,000</p>
+                    <div class="goal-progress-bar">
+                        <div class="goal-progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <span class="goal-amount">$7,500 / $10,000</span>
+                </div>
+            </div>
+            <div class="demo-goal-card" data-tilt>
+                <div class="goal-visual">
+                    <div class="goal-circle-demo">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="goal-bg" cx="50" cy="50" r="45"/>
+                            <circle class="goal-progress" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="170"/>
+                        </svg>
+                        <div class="goal-text">
+                            <span class="goal-percent">40%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="goal-info">
+                    <h4>Vacation Fund</h4>
+                    <p>Target: $3,000</p>
+                    <div class="goal-progress-bar">
+                        <div class="goal-progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <span class="goal-amount">$1,200 / $3,000</span>
+                </div>
+            </div>
+            <div class="demo-goal-card" data-tilt>
+                <div class="goal-visual">
+                    <div class="goal-circle-demo">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="goal-bg" cx="50" cy="50" r="45"/>
+                            <circle class="goal-progress" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="28"/>
+                        </svg>
+                        <div class="goal-text">
+                            <span class="goal-percent">90%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="goal-info">
+                    <h4>New Laptop</h4>
+                    <p>Target: $2,000</p>
+                    <div class="goal-progress-bar">
+                        <div class="goal-progress-fill" style="width: 90%;"></div>
+                    </div>
+                    <span class="goal-amount">$1,800 / $2,000</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <i class="fas fa-cube"></i>
+                    <span>3D<span class="accent">Expense</span></span>
+                </a>
+                <p>A futuristic financial management system built with passion by <a href="https://github.com/issu321" target="_blank" class="footer-link">Ussu</a>.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank"><i class="fab fa-git-alt"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Live Demo</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/README.md" target="_blank">README</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/LICENSE" target="_blank">License</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank">Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 <a href="https://github.com/issu321" target="_blank">Ussu</a>. Licensed under MIT. Built with <i class="fas fa-heart"></i> and Three.js</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

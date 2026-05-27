@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Advanced 3D Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="threejs-bg"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <i class="fas fa-cube logo-icon"></i>
+                <span class="logo-text">3D<span class="logo-accent">Expense</span></span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="features.html" class="nav-link">Features</a></li>
+                <li><a href="demo.html" class="nav-link">Live Demo</a></li>
+                <li><a href="docs.html" class="nav-link active">Docs</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank" class="nav-link nav-github"><i class="fab fa-github"></i> GitHub</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <span class="page-tag"><i class="fas fa-book"></i> Documentation</span>
+            <h1 class="page-title">Project <span class="accent">Docs</span></h1>
+            <p class="page-subtitle">Complete guide to installing, configuring, and using the 3D Expense Tracker</p>
+        </div>
+    </section>
+
+    <div class="docs-container">
+        <aside class="docs-sidebar">
+            <div class="docs-sidebar-inner">
+                <h4>Getting Started</h4>
+                <ul>
+                    <li><a href="#overview" class="docs-link active">Overview</a></li>
+                    <li><a href="#prerequisites" class="docs-link">Prerequisites</a></li>
+                    <li><a href="#installation" class="docs-link">Installation</a></li>
+                </ul>
+                <h4>Configuration</h4>
+                <ul>
+                    <li><a href="#windows" class="docs-link">Windows Setup</a></li>
+                    <li><a href="#linux" class="docs-link">Linux Setup</a></li>
+                    <li><a href="#manual" class="docs-link">Manual Setup</a></li>
+                </ul>
+                <h4>Usage</h4>
+                <ul>
+                    <li><a href="#first-launch" class="docs-link">First Launch</a></li>
+                    <li><a href="#navigation" class="docs-link">Navigation</a></li>
+                    <li><a href="#database" class="docs-link">Database Schema</a></li>
+                </ul>
+                <h4>Development</h4>
+                <ul>
+                    <li><a href="#tech-stack" class="docs-link">Tech Stack</a></li>
+                    <li><a href="#folder-structure" class="docs-link">Folder Structure</a></li>
+                    <li><a href="#contributing" class="docs-link">Contributing</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="docs-content">
+            <section id="overview" class="docs-section">
+                <h2>Project Overview</h2>
+                <p>Welcome to the <strong>Advanced 3D Expense Tracker</strong> — a next-generation web-based personal finance application powered by <strong>Streamlit</strong> and <strong>Three.js</strong>.</p>
+                <p>Transform your browser into a futuristic financial command center with 3D animated cyberpunk UI, interactive 3D charts, Three.js particle backgrounds, AI financial insights, and a multi-user system with secure authentication.</p>
+                <div class="docs-info-box">
+                    <i class="fas fa-info-circle"></i>
+                    <p><strong>Quick Note:</strong> This application runs entirely on your local machine. All data is stored in a local SQLite database — no data leaves your computer.</p>
+                </div>
+            </section>
+
+            <section id="prerequisites" class="docs-section">
+                <h2>Prerequisites</h2>
+                <p>Before installing, ensure you have the following:</p>
+                <ul class="docs-list">
+                    <li><i class="fab fa-python"></i> <strong>Python 3.11</strong> or higher</li>
+                    <li><i class="fas fa-terminal"></i> <strong>pip</strong> (Python package manager)</li>
+                    <li><i class="fab fa-git-alt"></i> <strong>Git</strong> (for cloning the repository)</li>
+                </ul>
+                <div class="docs-code-block">
+                    <div class="code-header">
+                        <span>Check Python Version</span>
+                        <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <pre><code class="language-bash">python --version
+# or
+python3 --version</code></pre>
+                </div>
+            </section>
+
+            <section id="installation" class="docs-section">
+                <h2>Installation</h2>
+                <h3>Step 1: Clone the Repository</h3>
+                <div class="docs-code-block">
+                    <div class="code-header">
+                        <span>Git Clone</span>
+                        <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <pre><code class="language-bash">git clone https://github.com/issu321/Advanced-CLI-Expense-Tracker.git
+cd Advanced-CLI-Expense-Tracker</code></pre>
+                </div>
+
+                <h3>Step 2: Install Dependencies</h3>
+                <p>Choose one of the following methods based on your operating system:</p>
+            </section>
+
+            <section id="windows" class="docs-section">
+                <h2>Windows Setup</h2>
+                <h3>Option 1: Automatic Installation (Recommended)</h3>
+                <p>Simply run the provided batch file:</p>
+                <div class="docs-code-block">
+                    <div class="code-header">
+                        <span>Windows Auto-Install</span>
+                        <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <pre><code class="language-cmd">install.bat</code></pre>
+                </div>
+
+                <h3>Option 2: Manual Installation</h3>
+                <div class="docs-code-block">
+                    <div class="code-header">
+                        <span>Manual Windows Setup</span>
+                        <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <pre><code class="language-cmd">python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+streamlit run app.py</code></pre>
+                </div>
+                <p>Then open your browser at: <code>http://localhost:8501</code></p>
+            </section>
+
+            <section id="linux" class="docs-section">
+                <h2>Linux Setup</h2>
+                <h3>Option 1: Automatic Installation (Recommended)</h3>
+                <div class="docs-code-block">
+                    <div class="code-header">
+                        <span>Linux Auto-Install</span>
+                        <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <pre><code class="language-bash">chmod +x install.sh
+./install.sh</code></pre>
+                </div>
+
+                <h3>Option 2: Manual Installation</h3>
+                <div class="docs-code-block">
+                    <div class="code-header">
+                        <span>Manual Linux Setup</span>
+                        <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <pre><code class="language-bash">python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+streamlit run app.py</code></pre>
+                </div>
+                <p>Then open your browser at: <code>http://localhost:8501</code></p>
+            </section>
+
+            <section id="manual" class="docs-section">
+                <h2>Manual Setup</h2>
+                <p>If the automatic installers don't work, follow these manual steps:</p>
+                <div class="docs-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h4>Create Virtual Environment</h4>
+                            <code>python -m venv venv</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h4>Activate Virtual Environment</h4>
+                            <p>Windows: <code>venv\Scripts\activate</code></p>
+                            <p>Linux/Mac: <code>source venv/bin/activate</code></p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h4>Install Dependencies</h4>
+                            <code>pip install -r requirements.txt</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <h4>Run the Application</h4>
+                            <code>streamlit run app.py</code>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="first-launch" class="docs-section">
+                <h2>First Launch</h2>
+                <p>When you run the application for the first time:</p>
+                <div class="docs-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h4>3D Login Screen</h4>
+                            <p>You will see a cyberpunk-styled authentication screen with neon text effects.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h4>Register or Login</h4>
+                            <p>Create a new account or sign in with existing credentials. All passwords are hashed with SHA-256.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h4>3D Dashboard</h4>
+                            <p>Navigate through the futuristic sidebar menu to access all features.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="navigation" class="docs-section">
+                <h2>Navigation Guide</h2>
+                <p>The sidebar provides access to all major features:</p>
+                <div class="nav-guide-grid">
+                    <div class="nav-guide-item">
+                        <i class="fas fa-home"></i>
+                        <h4>Dashboard</h4>
+                        <p>Overview with metric cards & recent activity</p>
+                    </div>
+                    <div class="nav-guide-item">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h4>Expenses</h4>
+                        <p>Add, view, edit, search expenses + 3D bar chart</p>
+                    </div>
+                    <div class="nav-guide-item">
+                        <i class="fas fa-hand-holding-dollar"></i>
+                        <h4>Income</h4>
+                        <p>Track income + income vs expense comparison</p>
+                    </div>
+                    <div class="nav-guide-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Budgets</h4>
+                        <p>Set budgets + 3D gauge visualizations</p>
+                    </div>
+                    <div class="nav-guide-item">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Savings</h4>
+                        <p>Create goals + circular progress indicators</p>
+                    </div>
+                    <div class="nav-guide-item">
+                        <i class="fas fa-sync-alt"></i>
+                        <h4>Recurring</h4>
+                        <p>Manage subscriptions + auto-simulation</p>
+                    </div>
+                    <div class="nav-guide-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Analytics</h4>
+                        <p>3D charts, trends, financial summary</p>
+                    </div>
+                    <div class="nav-guide-item">
+                        <i class="fas fa-robot"></i>
+                        <h4>AI Insights</h4>
+                        <p>Smart financial suggestions & alerts</p>
+                    </div>
+                    <div class="nav-guide-item">
+                        <i class="fas fa-file-export"></i>
+                        <h4>Export</h4>
+                        <p>Download CSV and TXT reports</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="database" class="docs-section">
+                <h2>Database Schema</h2>
+                <p>The application uses <strong>SQLite3</strong> (<code>expense_data.db</code>) with the following schema:</p>
+                <div class="docs-table-wrapper">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Table</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>users</code></td>
+                                <td>Stores user accounts with SHA-256 hashed passwords</td>
+                            </tr>
+                            <tr>
+                                <td><code>expenses</code></td>
+                                <td>All expense transactions per user</td>
+                            </tr>
+                            <tr>
+                                <td><code>income</code></td>
+                                <td>All income records per user</td>
+                            </tr>
+                            <tr>
+                                <td><code>budgets</code></td>
+                                <td>Monthly budget allocations by category</td>
+                            </tr>
+                            <tr>
+                                <td><code>savings_goals</code></td>
+                                <td>Savings targets with progress tracking</td>
+                            </tr>
+                            <tr>
+                                <td><code>recurring_expenses</code></td>
+                                <td>Automated recurring bill/subscription data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="docs-info-box warning">
+                    <i class="fas fa-shield-halved"></i>
+                    <p><strong>Data Security:</strong> All passwords are hashed using SHA-256. Each user has fully isolated financial records. No data leaves your local machine.</p>
+                </div>
+            </section>
+
+            <section id="tech-stack" class="docs-section">
+                <h2>Technology Stack</h2>
+                <div class="docs-table-wrapper">
+                    <table class="docs-table">
+                        <thead>
+                            <tr>
+                                <th>Technology</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Python 3.11+</strong></td>
+                                <td>Core language</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Streamlit</strong></td>
+                                <td>Web application framework</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Plotly</strong></td>
+                                <td>Interactive 3D charts and visualizations</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Three.js</strong></td>
+                                <td>3D particle background animation</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pandas</strong></td>
+                                <td>Data manipulation for analytics</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SQLite3</strong></td>
+                                <td>Local embedded database</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hashlib</strong></td>
+                                <td>SHA-256 password hashing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="folder-structure" class="docs-section">
+                <h2>Folder Structure</h2>
+                <div class="docs-code-block">
+                    <div class="code-header">
+                        <span>Project Structure</span>
+                        <button class="copy-btn" onclick="copyCode(this)"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <pre><code class="language-text">Advanced-CLI-Expense-Tracker/
+|
+├── app.py              # Main Streamlit application (all logic)
+├── requirements.txt    # Python dependencies
+├── README.md           # Project documentation
+├── install.sh          # Linux auto-installer
+├── install.bat         # Windows auto-installer
+├── inputguide.md       # Detailed usage guide
+├── expense_data.db     # SQLite database (auto-created)
+├── .gitignore          # Git ignore rules
+└── assets/
+    └── banner.txt      # ASCII art banner</code></pre>
+                </div>
+            </section>
+
+            <section id="contributing" class="docs-section">
+                <h2>Contributing Guide</h2>
+                <p>We welcome contributions! Follow these steps:</p>
+                <div class="docs-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h4>Fork the Repository</h4>
+                            <p>Click the Fork button on the <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank">GitHub repo</a>.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h4>Clone Your Fork</h4>
+                            <code>git clone https://github.com/your-username/Advanced-CLI-Expense-Tracker.git</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h4>Create a Feature Branch</h4>
+                            <code>git checkout -b feature/amazing-feature</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <h4>Commit Your Changes</h4>
+                            <code>git commit -m 'Add amazing feature'</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-content">
+                            <h4>Push and Open PR</h4>
+                            <code>git push origin feature/amazing-feature</code>
+                            <p>Then open a Pull Request on GitHub.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="docs-info-box">
+                    <i class="fas fa-code"></i>
+                    <p><strong>Coding Standards:</strong> Follow PEP 8 style guidelines. Keep functions focused and lightweight. Add docstrings for new features. Test on both Windows and Linux.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <i class="fas fa-cube"></i>
+                    <span>3D<span class="accent">Expense</span></span>
+                </a>
+                <p>A futuristic financial management system built with passion by <a href="https://github.com/issu321" target="_blank" class="footer-link">Ussu</a>.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/issu321" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank"><i class="fab fa-git-alt"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="demo.html">Live Demo</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/README.md" target="_blank">README</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/issues" target="_blank">Issues</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker/blob/main/LICENSE" target="_blank">License</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Developer</h4>
+                    <ul>
+                        <li><a href="https://github.com/issu321" target="_blank">GitHub Profile</a></li>
+                        <li><a href="https://github.com/issu321/Advanced-CLI-Expense-Tracker" target="_blank">Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> 2026 <a href="https://github.com/issu321" target="_blank">Ussu</a>. Licensed under MIT. Built with <i class="fas fa-heart"></i> and Three.js</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/three-bg.js"></script>
+    <script src="js/docs.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
